@@ -15,9 +15,4 @@ public class MainActivity extends AppCompatActivity {
 
 
     }
-
-    public void testButton(View view) {
-        TextView textView = findViewById(R.id.textView);
-        textView.setText("Test geslaagd");
-    }
 }
