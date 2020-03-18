@@ -1,7 +1,7 @@
 <resources>
     <string name="app_name">on-boarding</string>
-    <string name="treinstation_message">Het treinstation van Roosendaal met de bussen aan de voorzijde. Op het treinstation zijn een kiosk en doner company te vinden</string>
-    <string name="markt_message">De markt van Roosendaal. Een heerlijk ruim plein waar je in de zomer lekker op het terras kan zitten</string>
-    <string name="skydive_message">In Roosendaal is een super vette indoor skydive hal. Een perfect uitje om na school te doen met een groepje!</string>
-    <string name="roselaar_message">Het winkelcentrum de Roselaar ligt naast de school. Hier kun je onder andere een Albert Heijn vinden, perfect voor als je je ontbijt niet hebt kunnen eten</string>
+    <string name="treinstation_message">Het treinstation van Roosendaal met de bussen aan de voorzijde. Op het treinstation is een kiosk en een doner company te vinden.</string>
+    <string name="markt_message">De prachtige markt van Roosendaal. Een ruim plein waar je in de zomer voor of na school heerlijk op het terras kan zitten.</string>
+    <string name="skydive_message">In Roosendaal is een super vette indoor skydive hal. Het perfecte uitje om na school te doen met een groepje!</string>
+    <string name="roselaar_message">Het winkelcentrum de Roselaar ligt praktisch naast de school. Hier kun je onder andere een Albert Heijn vinden, perfect voor als je je ontbijt niet hebt kunnen maken!</string>
 </resources>

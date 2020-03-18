@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity">
+    tools:context=".OntdekRoosendaalActivity">
 
 
     <TextView
@@ -29,7 +29,7 @@
         android:layout_marginTop="12dp"
         android:layout_marginEnd="20dp"
         android:contentDescription="@string/app_name"
-        android:onClick="showMarktBericht"
+        android:onClick="markt_onclick"
         android:scaleType="centerCrop"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/ontdekRoosendaal" />
@@ -43,7 +43,7 @@
         android:layout_marginTop="12dp"
         android:layout_marginEnd="5dp"
         android:contentDescription="@string/app_name"
-        android:onClick="showTreinstationBericht"
+        android:onClick="treinstation_onclick"
         android:scaleType="centerCrop"
         app:layout_constraintEnd_toStartOf="@+id/imageView"
         app:layout_constraintHorizontal_bias="0.0"
@@ -57,7 +57,7 @@
         android:layout_marginTop="5dp"
         android:layout_marginEnd="19dp"
         android:contentDescription="@string/app_name"
-        android:onClick="showSkydiveBericht"
+        android:onClick="skydiving_onclick"
         android:scaleType="centerCrop"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -73,7 +73,7 @@
         android:layout_marginTop="5dp"
         android:layout_marginEnd="5dp"
         android:contentDescription="@string/app_name"
-        android:onClick="showRoselaarBericht"
+        android:onClick="roselaar_onclick"
         android:scaleType="centerCrop"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@+id/imageView3"
