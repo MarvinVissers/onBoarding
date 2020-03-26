@@ -86,6 +86,7 @@ public class OntdekRoosendaalActivity extends AppCompatActivity implements Respo
         ImageView imageViewRoselaar = findViewById(R.id.imageView4);
 
         try {
+            result = new JSONArray();
             //JSON array maken van de response. Dit vind ik het fijnste uitlezen
             result = response.getJSONArray("item");
             //Uitlezen van de array
@@ -100,22 +101,22 @@ public class OntdekRoosendaalActivity extends AppCompatActivity implements Respo
                 //Switch gaat zorgen dat bij elk uniek nummer de unieke URL teruggeven wordt en via Picasso in de imageView geladen wordt.
                 switch (bezienswaardigheid)
                 {
-                    case 1: String treinstationImageUrl = obj.optString("foto", "https://www.scn.today//wp-content//uploads//2018//03//NL-RO-2016-entree-anvers.jpg").trim();
+                    case 1: String treinstationImageUrl = obj.optString("foto", "https://img-brabant.rgcdn.nl/917b4c0de8ca48c9b194cc164da4aa10/opener/Het-treinstation-in-Roosendaal.jpg").trim();
                         Picasso.get().load(treinstationImageUrl).into(imageViewTreinstation);
                         System.out.println("Foto treinstation");
                         break;
 
-                    case 2: String marktImageUrl = obj.getString("foto").trim();
+                    case 2: String marktImageUrl = obj.optString("foto", "https://monumentje.files.wordpress.com/2012/02/markt-roosendaal.jpg").trim();
                         Picasso.get().load(marktImageUrl).into(imageViewMarkt);
                         System.out.println("Foto markt");
                         break;
 
-                    case 3: String skydiveImageUrl = obj.getString("foto").trim();
+                    case 3: String skydiveImageUrl = obj.optString("foto", "https://monumentje.files.wordpress.com/2012/02/markt-roosendaal.jpg").trim();
                         Picasso.get().load(skydiveImageUrl).into(imageViewSkydiving);
                         System.out.println("Foto skydyving");
                         break;
 
-                    case 4: String roselaarImageUrl = obj.getString("foto").trim();
+                    case 4: String roselaarImageUrl = obj.optString("foto", "https://www.scn.today/wp-content/uploads/2018/03/NL-RO-2016-entree-anvers.jpg").trim();
                         Picasso.get().load(roselaarImageUrl).into(imageViewRoselaar);
                         System.out.println("Foto roselaar");
                         break;
