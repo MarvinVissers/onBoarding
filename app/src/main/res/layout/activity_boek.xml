@@ -1,80 +1,47 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity">
-
-    <FrameLayout
-        android:id="@+id/frameLayout"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
-
-        <VideoView
-            android:id="@+id/video_view"
-            android:layout_width="match_parent"
-            android:layout_height="253dp"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintLeft_toLeftOf="parent"
-            app:layout_constraintRight_toRightOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
-
-    </FrameLayout>
-
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context=".BoekActivity">
 
     <TextView
-        android:id="@+id/txtWelkom"
+        android:id="@+id/TitleText"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="28dp"
-        android:fontFamily="@font/frutigerltstdblack"
-        android:gravity="center"
-        android:text="Welkom"
-        android:textColor="@color/colorTitle"
-        android:textSize="24sp"
+        android:text="Boekenlijst"
         android:textStyle="bold"
+        android:textColor="#AF3360"
+        android:textSize="24sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.409"
+        app:layout_constraintHorizontal_bias="0.489"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.165" />
+        app:layout_constraintVertical_bias="0.173" />
 
-    <TextView
-        android:id="@+id/txtAD"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:fontFamily="@font/frutigerltstdblack"
-        android:text="Associates degree"
-        android:textColor="@color/colorHeader2"
-        android:textSize="20sp"
-        android:textStyle="bold"
+    <ImageButton
+        android:id="@+id/BoekBtn"
+        android:layout_width="113dp"
+        android:layout_height="168dp"
+        android:onClick="onBoekBtnClick"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.072"
+        app:layout_constraintHorizontal_bias="0.053"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/txtWelkom"
-        app:layout_constraintVertical_bias="0.696" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.458"
+        app:srcCompat="@android:drawable/checkbox_off_background" />
 
-    <TextView
-        android:id="@+id/txtOS"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:fontFamily="@font/frutigerltstdblack"
-        android:textSize="12sp"
-        android:textColor="@color/colorPlainText"
-        android:text="Welkom bij jouw nieuwe associates degree applicatie. Hier vind jij nuttige informatie over de start van jouw opleiding!"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.461"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/txtAD"
-        app:layout_constraintVertical_bias="0.081" />
+    <ImageView
+        android:id="@+id/StudyStore"
+        android:layout_width="195dp"
+        android:layout_height="52dp"
+        app:srcCompat="@drawable/ic_launcher_foreground"
+        tools:layout_editor_absoluteX="16dp"
+        tools:layout_editor_absoluteY="164dp"
+        tools:ignore="MissingConstraints" />
 
     <TextView
         android:id="@+id/tvWeetje"
@@ -82,7 +49,7 @@
         android:layout_height="wrap_content"
         android:fontFamily="@font/frutigerltstdblack"
         android:gravity="center"
-        android:text="Wist je dat je als promostudent bij zou kunnen verdiennen?"
+        android:text="Wist je dat je op de school zou kunnen poolen, ping-pongen en tafelvoetballen?"
         android:textColor="@color/colorHeader2"
         android:textSize="12sp"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -90,7 +57,7 @@
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.909" />
+        app:layout_constraintVertical_bias="0.895" />
 
     <!-- Table layout voor de bollen om aan te geven welke pagina je bent -->
     <TableLayout
@@ -125,9 +92,8 @@
                 android:layout_column="1"
                 android:layout_marginLeft="3dp"
                 android:layout_marginRight="3dp"
-                android:background="@drawable/pagina_bol_niet_geweest"
-                android:text=""
-                android:onClick="Scherm2"/>
+                android:background="@drawable/pagina_bol_geweest"
+                android:text="" />
 
             <TextView
                 android:id="@+id/tvPagina3"
@@ -136,7 +102,7 @@
                 android:layout_column="1"
                 android:layout_marginLeft="3dp"
                 android:layout_marginRight="3dp"
-                android:background="@drawable/pagina_bol_niet_geweest"
+                android:background="@drawable/pagina_bol_geweest"
                 android:text="" />
 
             <TextView
@@ -147,7 +113,8 @@
                 android:layout_marginLeft="3dp"
                 android:layout_marginRight="3dp"
                 android:background="@drawable/pagina_bol_niet_geweest"
-                android:text="" />
+                android:text=""
+                android:onClick="naarScherm4" />
 
             <TextView
                 android:id="@+id/tvPagina5"

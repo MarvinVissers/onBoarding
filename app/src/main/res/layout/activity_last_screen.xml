@@ -4,77 +4,51 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity">
-
-    <FrameLayout
-        android:id="@+id/frameLayout"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
-
-        <VideoView
-            android:id="@+id/video_view"
-            android:layout_width="match_parent"
-            android:layout_height="253dp"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintLeft_toLeftOf="parent"
-            app:layout_constraintRight_toRightOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
-
-    </FrameLayout>
-
+    tools:context=".LastScreenActivity">
 
     <TextView
-        android:id="@+id/txtWelkom"
+        android:id="@+id/tvAfsluitingTekst"
+        android:layout_width="350dp"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/frutigerltstdblack"
+        android:text=""
+        android:textColor="@color/colorPlainText"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintHorizontal_bias="0.491"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.812" />
+
+    <pl.droidsonroids.gif.GifImageView
+        android:id="@+id/imageView"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:src="@drawable/cheering_gif"
+        app:layout_constraintBottom_toBottomOf="parent"
+
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.498" />
+
+    <!-- Table layout voor de bollen om aan te geven welke pagina je bent -->
+    <TextView
+        android:id="@+id/textView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="28dp"
         android:fontFamily="@font/frutigerltstdblack"
         android:gravity="center"
-        android:text="Welkom"
+        android:text="Klaar, welkom bij Avans!"
         android:textColor="@color/colorTitle"
         android:textSize="24sp"
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.409"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.165" />
-
-    <TextView
-        android:id="@+id/txtAD"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:fontFamily="@font/frutigerltstdblack"
-        android:text="Associates degree"
-        android:textColor="@color/colorHeader2"
-        android:textSize="20sp"
-        android:textStyle="bold"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.072"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/txtWelkom"
-        app:layout_constraintVertical_bias="0.696" />
-
-    <TextView
-        android:id="@+id/txtOS"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:fontFamily="@font/frutigerltstdblack"
-        android:textSize="12sp"
-        android:textColor="@color/colorPlainText"
-        android:text="Welkom bij jouw nieuwe associates degree applicatie. Hier vind jij nuttige informatie over de start van jouw opleiding!"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.461"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/txtAD"
-        app:layout_constraintVertical_bias="0.081" />
+        app:layout_constraintVertical_bias="0.196" />
 
     <TextView
         android:id="@+id/tvWeetje"
@@ -82,17 +56,16 @@
         android:layout_height="wrap_content"
         android:fontFamily="@font/frutigerltstdblack"
         android:gravity="center"
-        android:text="Wist je dat je als promostudent bij zou kunnen verdiennen?"
+        android:text="Meer weten over doorstuderen? Klik hier (https://www.ad-academie.nl/praktische-informatie/doorstuderen)"
         android:textColor="@color/colorHeader2"
         android:textSize="12sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintHorizontal_bias="0.333"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.909" />
+        app:layout_constraintVertical_bias="0.896" />
 
-    <!-- Table layout voor de bollen om aan te geven welke pagina je bent -->
     <TableLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -125,9 +98,8 @@
                 android:layout_column="1"
                 android:layout_marginLeft="3dp"
                 android:layout_marginRight="3dp"
-                android:background="@drawable/pagina_bol_niet_geweest"
-                android:text=""
-                android:onClick="Scherm2"/>
+                android:background="@drawable/pagina_bol_geweest"
+                android:text="" />
 
             <TextView
                 android:id="@+id/tvPagina3"
@@ -136,7 +108,7 @@
                 android:layout_column="1"
                 android:layout_marginLeft="3dp"
                 android:layout_marginRight="3dp"
-                android:background="@drawable/pagina_bol_niet_geweest"
+                android:background="@drawable/pagina_bol_geweest"
                 android:text="" />
 
             <TextView
@@ -146,7 +118,7 @@
                 android:layout_column="1"
                 android:layout_marginLeft="3dp"
                 android:layout_marginRight="3dp"
-                android:background="@drawable/pagina_bol_niet_geweest"
+                android:background="@drawable/pagina_bol_geweest"
                 android:text="" />
 
             <TextView
@@ -156,7 +128,7 @@
                 android:layout_column="1"
                 android:layout_marginLeft="3dp"
                 android:layout_marginRight="3dp"
-                android:background="@drawable/pagina_bol_niet_geweest"
+                android:background="@drawable/pagina_bol_geweest"
                 android:text="" />
 
             <TextView
@@ -166,7 +138,7 @@
                 android:layout_column="1"
                 android:layout_marginLeft="3dp"
                 android:layout_marginRight="3dp"
-                android:background="@drawable/pagina_bol_niet_geweest"
+                android:background="@drawable/pagina_bol_geweest"
                 android:text="" />
         </TableRow>
     </TableLayout>
@@ -215,5 +187,6 @@
             android:text=""
             android:visibility="invisible"/>
     </RelativeLayout>
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>

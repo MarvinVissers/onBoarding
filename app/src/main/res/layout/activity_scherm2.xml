@@ -4,77 +4,64 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity">
+    tools:context=".Scherm2">
 
-    <FrameLayout
-        android:id="@+id/frameLayout"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
-
-        <VideoView
-            android:id="@+id/video_view"
-            android:layout_width="match_parent"
-            android:layout_height="253dp"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintLeft_toLeftOf="parent"
-            app:layout_constraintRight_toRightOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
-
-    </FrameLayout>
-
+    <pl.droidsonroids.gif.GifImageView
+        android:layout_width="373dp"
+        android:layout_height="0dp"
+        android:background="#ffffff"
+        android:src="@drawable/gifje"
+        app:layout_constraintBottom_toTopOf="@+id/txtIntro"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.421"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/txtTitel" />
 
     <TextView
-        android:id="@+id/txtWelkom"
+        android:id="@+id/txtTitel"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="28dp"
+        android:text="Avans introductie"
         android:fontFamily="@font/frutigerltstdblack"
-        android:gravity="center"
-        android:text="Welkom"
         android:textColor="@color/colorTitle"
         android:textSize="24sp"
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.409"
+        app:layout_constraintHorizontal_bias="0.468"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.165" />
+        app:layout_constraintVertical_bias="0.186" />
 
     <TextView
-        android:id="@+id/txtAD"
+        android:id="@+id/txtIntro"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:text="Introductie Avans"
         android:fontFamily="@font/frutigerltstdblack"
-        android:text="Associates degree"
         android:textColor="@color/colorHeader2"
         android:textSize="20sp"
-        android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.072"
+        app:layout_constraintHorizontal_bias="0.093"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/txtWelkom"
-        app:layout_constraintVertical_bias="0.696" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.612" />
 
     <TextView
         android:id="@+id/txtOS"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:text="Je bent klaar met MBO, HAVO of misschien een andere weg. Nu ben je natuurlijk wel benieuwd naar wat er allemaal te wachten staat. Click op de video om te zien wat je precies mag verwachten."
         android:fontFamily="@font/frutigerltstdblack"
         android:textSize="12sp"
         android:textColor="@color/colorPlainText"
-        android:text="Welkom bij jouw nieuwe associates degree applicatie. Hier vind jij nuttige informatie over de start van jouw opleiding!"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.461"
+        app:layout_constraintHorizontal_bias="0.238"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/txtAD"
-        app:layout_constraintVertical_bias="0.081" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.734" />
 
     <TextView
         android:id="@+id/tvWeetje"
@@ -82,7 +69,7 @@
         android:layout_height="wrap_content"
         android:fontFamily="@font/frutigerltstdblack"
         android:gravity="center"
-        android:text="Wist je dat je als promostudent bij zou kunnen verdiennen?"
+        android:text="Wist je dat je via Avans gratis Microsoft office applicaties kan downloaden?"
         android:textColor="@color/colorHeader2"
         android:textSize="12sp"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -90,7 +77,7 @@
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.909" />
+        app:layout_constraintVertical_bias="0.895" />
 
     <!-- Table layout voor de bollen om aan te geven welke pagina je bent -->
     <TableLayout
@@ -125,9 +112,8 @@
                 android:layout_column="1"
                 android:layout_marginLeft="3dp"
                 android:layout_marginRight="3dp"
-                android:background="@drawable/pagina_bol_niet_geweest"
-                android:text=""
-                android:onClick="Scherm2"/>
+                android:background="@drawable/pagina_bol_geweest"
+                android:text="" />
 
             <TextView
                 android:id="@+id/tvPagina3"
@@ -137,7 +123,8 @@
                 android:layout_marginLeft="3dp"
                 android:layout_marginRight="3dp"
                 android:background="@drawable/pagina_bol_niet_geweest"
-                android:text="" />
+                android:text=""
+                android:onClick="naarScherm3"/>
 
             <TextView
                 android:id="@+id/tvPagina4"
