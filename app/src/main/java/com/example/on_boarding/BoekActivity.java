@@ -24,9 +24,6 @@ public class BoekActivity extends AppCompatActivity {
         setContentView(R.layout.activity_boek);
         Intent mainIntent = new Intent(this, MainActivity.class);
 
-        Intent intent = getIntent();
-        Bundle bundle = intent.getExtras();
-        int iStudentnummer = bundle.getInt("student");
 
     }
 
