@@ -64,7 +64,7 @@
                 android:layout_height="match_parent">
 
                 <TextView
-                    android:id="@+id/tvStudentNaam"
+                    android:id="@+id/tvStudentGegevens"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:fontFamily="@font/frutigerltstdblack"
@@ -75,23 +75,23 @@
                     android:textSize="12sp" />
             </TableRow>
 
-            <TableRow
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:paddingBottom="20dp" >
+<!--            <TableRow-->
+<!--                android:layout_width="match_parent"-->
+<!--                android:layout_height="match_parent"-->
+<!--                android:paddingBottom="20dp" >-->
 
-                <TextView
-                    android:id="@+id/tvStudentOpleiding"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:fontFamily="@font/frutigerltstdblack"
-                    android:gravity="fill_horizontal|left"
-                    android:paddingLeft="15dp"
-                    android:text=""
-                    android:textColor="@@color/colorPlainText"
-                    android:textSize="12sp" />
-            </TableRow>
+<!--                <TextView-->
+<!--                    android:id="@+id/tvStudentOpleiding"-->
+<!--                    android:layout_width="wrap_content"-->
+<!--                    android:layout_height="wrap_content"-->
+<!--                    android:layout_weight="1"-->
+<!--                    android:fontFamily="@font/frutigerltstdblack"-->
+<!--                    android:gravity="fill_horizontal|left"-->
+<!--                    android:paddingLeft="15dp"-->
+<!--                    android:text=""-->
+<!--                    android:textColor="@color/colorPlainText"-->
+<!--                    android:textSize="12sp" />-->
+<!--            </TableRow>-->
 
             <TableRow
                 android:layout_width="match_parent"
