@@ -3,6 +3,7 @@ package com.example.on_boarding;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 import android.view.View;
 
@@ -21,11 +22,20 @@ public class BoekActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_boek);
+        Intent mainIntent = new Intent(this, MainActivity.class);
+
+        Intent intent = getIntent();
+        Bundle bundle = intent.getExtras();
+        int iStudentnummer = bundle.getInt("student");
+
     }
 
     //nog niet af.. Hoe werk ik dit uit? Ik wil de front end koppelen. Ik moet namelijk een redirect maken maar weet niet hoe dat moet :(
-    public void onBoekBtnClick(View v) {
+    public void onBoekBtnClick(View v) throws IOException, JSONException {
 
+        String website = getOpleidingUrl(4);
+        Intent browserIntent = new Intent(Intent.ACTION_VIEW, Uri.parse(website));
+        startActivity(browserIntent);
     }
 
     public void naarScherm4(View v) {
