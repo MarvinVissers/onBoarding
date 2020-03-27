@@ -26,14 +26,14 @@ import java.util.ArrayList;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-public class FeedbackActivity extends AppCompatActivity implements Response.ErrorListener, Response.Listener<JSONObject> {
+public class FeedbackActivity extends  AppCompatActivity {
+//public class FeedbackActivity extends AppCompatActivity implements Response.ErrorListener, Response.Listener<JSONObject> {
 
     // Classes importeren
     private VolleyHelper helper;
     private studentController ctrlStudent;
 
-    // Lijst aanmaken voor studentgegevens
-    private ArrayList<Student> lijst = new ArrayList();
+    private TextView tvStudentGegevens;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -45,7 +45,14 @@ public class FeedbackActivity extends AppCompatActivity implements Response.Erro
         Bundle bundle = mainIntent.getExtras();
         int iStudentnummer = bundle.getInt("student");
 
-        this.ctrlStudent = new studentController(getBaseContext(), iStudentnummer);
+        // Student gegevens ophalen
+        tvStudentGegevens = findViewById(R.id.tvStudentGegevens);
+
+        // Student controller aanspreken
+        this.ctrlStudent = new studentController(getBaseContext(), tvStudentGegevens, 5, iStudentnummer);
+
+        // Student ophalen via de api
+        ctrlStudent.getStudent();
 
         /*
          * Feedback seekbar gradient achtergrond geven
@@ -64,10 +71,6 @@ public class FeedbackActivity extends AppCompatActivity implements Response.Erro
         // Seekbar ophalen en figuur meegeven
         SeekBar skFeedbackScore = findViewById(R.id.skScore);
         skFeedbackScore.setProgressDrawable(feedbackSeekbar);
-
-        // Gegevens doorsturen naar database sturen
-        helper = new VolleyHelper(getBaseContext(), "https://adaonboarding.ml/t4/");
-        helper.get("GetStudent?studentnummer=" + iStudentnummer, null, this, this);
     }
 
     // Gebruiker naar volgende pagina sturen
@@ -128,47 +131,5 @@ public class FeedbackActivity extends AppCompatActivity implements Response.Erro
 
         // Gegevens doorsturen naar de student controller
         ctrlStudent.opslaanFeedback(iScore, sOpmerking);
-    }
-
-    /**
-     *
-     * @param error Als er een error is met het ophalen van json
-     */
-    @Override
-    public void onErrorResponse(VolleyError error) {
-        System.out.println(error);
-    }
-
-    /**
-     *
-     * @param response Wat er gebeurt als er json teruggegeven wordt uit de api
-     */
-    @Override
-    public void onResponse(JSONObject response) {
-        try {
-            // JSONArray ophalen
-            JSONArray array = response.getJSONArray("item");
-
-            // Kijken of deze leeg is, zodat er geen error onstaat bij geven feedback of gegevens correct
-            if(array != null && array.length() > 0 ) {
-                for (int i = 0; i < array.length(); i++) {
-                    lijst.add(new Student(array.getJSONObject(i)));
-                }
-
-                TextView tvStudentNaam = findViewById(R.id.tvStudentNaam);
-                TextView tvStudentOpleiding = findViewById(R.id.tvStudentOpleiding);
-                TextView tvStudentnummer = findViewById(R.id.tvStudentnummer);
-
-                // Door de array lopen
-                for (Student StudentArray : lijst) {
-                    // Teksvelden vullen met gegevens student
-                    tvStudentNaam.setText(StudentArray.getStudentVoornaam() + " " + StudentArray.getStudentAchternaam());
-                    tvStudentOpleiding.setText(StudentArray.getStudentOpleiding());
-                    tvStudentnummer.setText(String.valueOf(StudentArray.getStudentNummer()));
-                }
-            }
-        }catch (JSONException e){
-            System.out.println(e);
-        }
     }
 }
