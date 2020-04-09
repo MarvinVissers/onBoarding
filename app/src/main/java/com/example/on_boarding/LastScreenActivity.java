@@ -4,6 +4,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -40,5 +41,15 @@ public class LastScreenActivity extends AppCompatActivity {
 
         // Student ophalen via de api
         ctrlStudent.getStudent();
+    }
+
+    public void vorigScherm(View view) {
+        Intent mainIntent = getIntent();
+        Bundle bundle = mainIntent.getExtras();
+        int iStudentnummer = bundle.getInt("student");
+
+        Intent intent = new Intent(this, FeedbackActivity.class);
+        intent.putExtra("student", iStudentnummer);
+        startActivity(intent);
     }
 }

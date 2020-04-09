@@ -105,4 +105,14 @@ public class BoekActivity extends AppCompatActivity {
             }
         }
     }
+
+    public void vorigScherm(View view) {
+        Intent boekIntent = getIntent();
+        Bundle bundle = boekIntent.getExtras();
+        int iStudentnummer = bundle.getInt("student");
+
+        Intent intent = new Intent(this, Scherm2.class);
+        intent.putExtra("student", iStudentnummer);
+        startActivity(intent);
+    }
 }

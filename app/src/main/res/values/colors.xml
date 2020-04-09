@@ -7,4 +7,5 @@
     <color name="colorHeader2">#1055AC</color>
     <color name="colorAccent1">#CB356C</color>
     <color name="colorPlainText">#000000</color>
+    <color name="colorWhite">#FFFFFF</color>
 </resources>

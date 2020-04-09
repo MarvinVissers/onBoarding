@@ -28,4 +28,13 @@ public class Scherm2 extends AppCompatActivity {
         intent.putExtra("student", iStudentnummer);
         startActivity(intent);
     }
+
+    public void vorigScherm(View view) {
+        Intent mainIntent = getIntent();
+        Bundle bundle = mainIntent.getExtras();
+        int iStudentnummer = bundle.getInt("student");
+        Intent intent = new Intent(this, MainActivity.class);
+        intent.putExtra("student", iStudentnummer);
+        startActivity(intent);
+    }
 }

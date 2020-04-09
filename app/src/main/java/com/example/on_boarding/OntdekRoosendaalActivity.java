@@ -126,4 +126,14 @@ public class OntdekRoosendaalActivity extends AppCompatActivity implements Respo
             e.printStackTrace();
         }
     }
+
+    public void vorigScherm(View view) {
+        Intent mainIntent = getIntent();
+        Bundle bundle = mainIntent.getExtras();
+        int iStudentnummer = bundle.getInt("student");
+
+        Intent intent = new Intent(this, BoekActivity.class);
+        intent.putExtra("student", iStudentnummer);
+        startActivity(intent);
+    }
 }

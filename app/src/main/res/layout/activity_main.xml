@@ -106,14 +106,26 @@
         <TableRow
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:stretchColumns="1">
+            android:stretchColumns="1"
+            >
+
+<!--            <Button-->
+<!--                android:id="@+id/button2"-->
+
+<!--                android:layout_marginRight="60dp"-->
+
+<!--                android:layout_width="69dp"-->
+<!--                android:layout_height="36dp"-->
+<!--                android:text="Prev"-->
+<!--                android:background="@color/colorWhite"-->
+<!--                android:textColor="@color/colorAccent"/>-->
 
             <TextView
                 android:id="@+id/tvPagina1"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_column="1"
-                android:layout_marginLeft="100dp"
+                android:layout_marginLeft="125dp"
                 android:layout_marginRight="3dp"
                 android:background="@drawable/pagina_bol_geweest"
                 android:text="" />
@@ -168,6 +180,19 @@
                 android:layout_marginRight="3dp"
                 android:background="@drawable/pagina_bol_niet_geweest"
                 android:text="" />
+
+            <Button
+                android:id="@+id/button3"
+                android:layout_width="69dp"
+                android:layout_height="36dp"
+                android:text="Next"
+                android:layout_marginLeft="60dp"
+                android:background="@color/colorWhite"
+                android:textColor="@color/colorAccent"
+                android:onClick="Scherm2"/>
+
+
+
         </TableRow>
     </TableLayout>
 
@@ -214,6 +239,7 @@
             android:layout_height="wrap_content"
             android:text=""
             android:visibility="invisible"/>
+
     </RelativeLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -132,4 +132,14 @@ public class FeedbackActivity extends  AppCompatActivity {
         // Gegevens doorsturen naar de student controller
         ctrlStudent.opslaanFeedback(iScore, sOpmerking);
     }
+
+    public void vorigScherm(View view) {
+        Intent mainIntent = getIntent();
+        Bundle bundle = mainIntent.getExtras();
+        int iStudentnummer = bundle.getInt("student");
+
+        Intent intent = new Intent(this, OntdekRoosendaalActivity.class);
+        intent.putExtra("student", iStudentnummer);
+        startActivity(intent);
+    }
 }
