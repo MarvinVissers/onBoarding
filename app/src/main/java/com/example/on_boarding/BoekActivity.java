@@ -6,6 +6,8 @@ import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.ImageButton;
+import android.widget.ImageView;
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -15,8 +17,10 @@ import java.io.IOException;
 import java.net.HttpURLConnection;
 import java.net.URL;
 import java.util.Scanner;
+import com.squareup.picasso.Picasso;
 
 public class BoekActivity extends AppCompatActivity {
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -24,13 +28,18 @@ public class BoekActivity extends AppCompatActivity {
         setContentView(R.layout.activity_boek);
         Intent mainIntent = new Intent(this, MainActivity.class);
 
+        ImageButton dimg = findViewById (R.id.BoekBtn);
+        Picasso.get().load("https://i.imgur.com/cMYw6qQ.png").into((dimg));
+
+        ImageView simg = findViewById (R.id.StudyStore);
+        Picasso.get().load("https://i.imgur.com/T3miWVM.png").into((simg));
 
     }
 
     //nog niet af.. Hoe werk ik dit uit? Ik wil de front end koppelen. Ik moet namelijk een redirect maken maar weet niet hoe dat moet :(
     public void onBoekBtnClick(View v) throws IOException, JSONException {
 
-        String website = getOpleidingUrl(4);
+        String website = getOpleidingUrl(1);
         Intent browserIntent = new Intent(Intent.ACTION_VIEW, Uri.parse(website));
         startActivity(browserIntent);
     }
