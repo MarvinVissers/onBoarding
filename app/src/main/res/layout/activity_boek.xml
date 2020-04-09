@@ -1,25 +1,38 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
     tools:context=".BoekActivity">
+
+    <ImageView
+        android:id="@+id/StudyStore"
+        android:layout_width="166dp"
+        android:layout_height="56dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.065"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.271"
+        app:srcCompat="@drawable/ic_launcher_foreground"
+        tools:ignore="MissingConstraints" />
 
     <TextView
         android:id="@+id/TitleText"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Boekenlijst"
-        android:textStyle="bold"
         android:textColor="#AF3360"
         android:textSize="24sp"
+        android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.489"
+        app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.173" />
+        app:layout_constraintVertical_bias="0.184" />
 
     <ImageButton
         android:id="@+id/BoekBtn"
@@ -31,17 +44,10 @@
         app:layout_constraintHorizontal_bias="0.053"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.458"
+        app:layout_constraintVertical_bias="0.449"
         app:srcCompat="@android:drawable/checkbox_off_background" />
 
-    <ImageView
-        android:id="@+id/StudyStore"
-        android:layout_width="195dp"
-        android:layout_height="52dp"
-        app:srcCompat="@drawable/ic_launcher_foreground"
-        tools:layout_editor_absoluteX="16dp"
-        tools:layout_editor_absoluteY="164dp"
-        tools:ignore="MissingConstraints" />
+    <!-- Table layout voor de bollen om aan te geven welke pagina je bent -->
 
     <TextView
         android:id="@+id/tvWeetje"
@@ -53,32 +59,26 @@
         android:textColor="@color/colorHeader2"
         android:textSize="12sp"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.895" />
+        app:layout_constraintVertical_bias="0.89" />
 
-    <!-- Table layout voor de bollen om aan te geven welke pagina je bent -->
     <TableLayout
+        android:id="@+id/tableLayout4"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.96">
+        tools:layout_editor_absoluteY="683dp">
+
 
         <TableRow
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
+            android:layout_width="387dp"
+            android:layout_height="32dp"
             android:stretchColumns="1">
 
             <TextView
                 android:id="@+id/tvPagina1"
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_height="match_parent"
                 android:layout_column="1"
                 android:layout_marginLeft="100dp"
                 android:layout_marginRight="3dp"
@@ -113,8 +113,8 @@
                 android:layout_marginLeft="3dp"
                 android:layout_marginRight="3dp"
                 android:background="@drawable/pagina_bol_niet_geweest"
-                android:text=""
-                android:onClick="naarScherm4" />
+                android:onClick="naarScherm4"
+                android:text="" />
 
             <TextView
                 android:id="@+id/tvPagina5"
@@ -135,31 +135,32 @@
                 android:layout_marginRight="3dp"
                 android:background="@drawable/pagina_bol_niet_geweest"
                 android:text="" />
+
+
         </TableRow>
     </TableLayout>
 
-    <!-- Relative layout voor de bollen bovenaan -->
-    <RelativeLayout
-        android:layout_width="417dp"
-        android:layout_height="736dp"
+    <TextView
+        android:id="@+id/textView5"
+        android:layout_width="232dp"
+        android:layout_height="160dp"
+        android:text="Je begint binnenkort aan jouw opleiding. Daarom is het handig om jezelf alvast voor te bereiden. Door op de boeken te clicken links van deze text kan je alvast bekijken welke boeken jij moet gaan bestellen. De optionele boeken zijn niet verplicht maar wel aangeraden voor jouw studie."
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintHorizontal_bias="0.81"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.0">
+        app:layout_constraintVertical_bias="0.443" />
 
-        <TextView
-            android:id="@+id/tvBolLogoRechts"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignParentEnd="true"
+    Relative layout voor de bollen bovenaan
 
-            android:layout_marginEnd="-50dp"
-            android:layout_marginTop="-110dp"
-            android:background="@drawable/bol_logo_rechts"
-            android:alpha="0.75"
-            android:text="" />
+    <!-- Textview aanmaken voor het studentnummer, niet zichtbaar voor gebruiker -->
+    <RelativeLayout
+        android:id="@+id/relativeLayout2"
+        android:layout_width="417dp"
+        android:layout_height="736dp"
+        tools:layout_editor_absoluteX="0dp"
+        tools:layout_editor_absoluteY="0dp">>
 
         <TextView
             android:id="@+id/tvBolLogoLinks"
@@ -169,18 +170,29 @@
 
             android:layout_marginStart="-140dp"
             android:layout_marginTop="-140dp"
-            android:layout_marginEnd="96dp"
-            android:background="@drawable/bol_logo_links"
+            android:layout_marginEnd="-36dp"
             android:alpha="0.75"
+            android:background="@drawable/bol_logo_links"
             android:text="" />
 
-        <!-- Textview aanmaken voor het studentnummer, niet zichtbaar voor gebruiker -->
         <TextView
+            android:id="@+id/tvBolLogoRechts"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+
+            android:layout_marginTop="-110dp"
+            android:layout_marginEnd="143dp"
+            android:alpha="0.75"
+            android:background="@drawable/bol_logo_rechts"
+            android:text="" />
+    </RelativeLayout>
+
+    <TextView
             android:id="@+id/tvStudentnummer"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text=""
-            android:visibility="invisible"/>
-    </RelativeLayout>
+            android:visibility="invisible" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
