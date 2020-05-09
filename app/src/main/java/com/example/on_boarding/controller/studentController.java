@@ -52,21 +52,21 @@ public class studentController implements Response.ErrorListener, Response.Liste
     /**
      * @param iGegevensCorrect 1 of 0. 1 staat ervoor dat de student zijn of haar gegevens correct zijn en 0 dat de gegevens van de student incorrect zijn.
      */
-    @Override
-    public void opslaanGegevensCorrect(int iGegevensCorrect) {
-        // Gegevens doorsturen naar database sturen
-        helper.post("UpdateStudent?studentnummer=" + iStudentnummer + "&gegevens-correct=" + iGegevensCorrect, null, null, this);
-    }
+    // @Override
+    // public void opslaanGegevensCorrect(int iGegevensCorrect) {
+    //     // Gegevens doorsturen naar database sturen
+    //     helper.post("UpdateStudent?studentnummer=" + iStudentnummer + "&gegevens-correct=" + iGegevensCorrect, null, null, this);
+    // }
 
-    /**
-     * @param iScore De score van de feedback die is gegeven. 1 tot 100
-     * @param sOpmerking De opmerking die bij de feeedback is gegevens. Kan leeg zijn.
-     */
-    @Override
-    public void opslaanFeedback(int iScore, String sOpmerking) {
-        // Gegevens doorsturen naar database sturen
-        helper.post("SaveFeedback?score=" + iScore + "&opmerking=" + sOpmerking, null, null, this);
-    }
+    // /**
+    //  * @param iScore De score van de feedback die is gegeven. 1 tot 100
+    //  * @param sOpmerking De opmerking die bij de feeedback is gegevens. Kan leeg zijn.
+    //  */
+    // @Override
+    // public void opslaanFeedback(int iScore, String sOpmerking) {
+    //     // Gegevens doorsturen naar database sturen
+    //     helper.post("SaveFeedback?score=" + iScore + "&opmerking=" + sOpmerking, null, null, this);
+    // }
 
     /**
      *

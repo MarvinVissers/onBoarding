@@ -15,6 +15,7 @@ import android.widget.TextView;
 import com.android.volley.Response;
 import com.android.volley.VolleyError;
 import com.example.on_boarding.controller.studentController;
+import com.example.on_boarding.controller.feedbackController;
 import com.example.on_boarding.helper.VolleyHelper;
 import com.example.on_boarding.modal.Student;
 
@@ -27,11 +28,11 @@ import java.util.ArrayList;
 import androidx.appcompat.app.AppCompatActivity;
 
 public class FeedbackActivity extends  AppCompatActivity {
-//public class FeedbackActivity extends AppCompatActivity implements Response.ErrorListener, Response.Listener<JSONObject> {
 
     // Classes importeren
     private VolleyHelper helper;
     private studentController ctrlStudent;
+    private feedbackController ctrlFeedback;
 
     private TextView tvStudentGegevens;
 
@@ -50,6 +51,7 @@ public class FeedbackActivity extends  AppCompatActivity {
 
         // Student controller aanspreken
         this.ctrlStudent = new studentController(getBaseContext(), tvStudentGegevens, 5, iStudentnummer);
+        this.ctrlFeedback = new FeedbackActivity(getBaseContext(), iStudentnummer);
 
         // Student ophalen via de api
         ctrlStudent.getStudent();
@@ -101,12 +103,12 @@ public class FeedbackActivity extends  AppCompatActivity {
             // Kijken of de gegevens correct zijn of niet
             if(rbGegevensCorrectNee.isChecked()){
                 // Gegevens doorsturen naar de student controller
-                ctrlStudent.opslaanGegevensCorrect(0);
+                ctrlFeedback.opslaanGegevensCorrect(0);
             }
             // Else if voor als er iets fout gaat wordt het niet zomaar geupdated in de database
             else if(rbGegevensCorrectJa.isChecked()){
                 // Gegevens doorsturen naar de student controller
-                ctrlStudent.opslaanGegevensCorrect(1);
+                ctrlFeedback.opslaanGegevensCorrect(1);
             }
         }catch(Exception error) {
             System.out.println(error);
@@ -130,7 +132,7 @@ public class FeedbackActivity extends  AppCompatActivity {
         sOpmerking = sOpmerking.replaceAll(" ", "%20");
 
         // Gegevens doorsturen naar de student controller
-        ctrlStudent.opslaanFeedback(iScore, sOpmerking);
+        ctrlFeedback.opslaanFeedback(iScore, sOpmerking);
     }
 
     public void vorigScherm(View view) {
