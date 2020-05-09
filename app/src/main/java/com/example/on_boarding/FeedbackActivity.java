@@ -51,7 +51,7 @@ public class FeedbackActivity extends  AppCompatActivity {
 
         // Student controller aanspreken
         this.ctrlStudent = new studentController(getBaseContext(), tvStudentGegevens, 5, iStudentnummer);
-        this.ctrlFeedback = new FeedbackActivity(getBaseContext(), iStudentnummer);
+        this.ctrlFeedback = new feedbackController(getBaseContext(), iStudentnummer);
 
         // Student ophalen via de api
         ctrlStudent.getStudent();

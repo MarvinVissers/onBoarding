@@ -5,7 +5,7 @@ package com.example.on_boarding.helper;
  * @author Marvin Vissers
  */
 
-public interface feedback {
+public interface Feedback {
     // Functie voor het opslaan van de feedback over zijn gegevens
     void opslaanGegevensCorrect(int iGegevensCorrect);
 
