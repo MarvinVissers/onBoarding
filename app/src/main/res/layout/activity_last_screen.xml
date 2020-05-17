@@ -7,16 +7,17 @@
     tools:context=".LastScreenActivity">
 
     <TextView
-        android:id="@+id/txtAfsluiting"
+        android:id="@+id/tvAfsluitingTekst"
         android:layout_width="350dp"
         android:layout_height="wrap_content"
-        android:text="test"
+        android:text=""
+        android:textColor="@color/colorPlainText"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintHorizontal_bias="0.491"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.773" />
+        app:layout_constraintVertical_bias="0.812" />
 
     <pl.droidsonroids.gif.GifImageView
         android:id="@+id/imageView"
@@ -29,38 +30,85 @@
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.403" />
+        app:layout_constraintVertical_bias="0.498" />
 
+    <!-- Table layout voor de bollen om aan te geven welke pagina je bent -->
     <TextView
         android:id="@+id/textView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Afgerond. Welkom bij Avans!"
-        android:textAppearance="@style/TextAppearance.AppCompat.Large"
-        android:textColor="#FF0000"
-        android:textStyle="bold|italic"
+        android:gravity="center"
+        android:text="Klaar, welkom bij Avans!"
+        android:textColor="@color/colorTitle"
+        android:textSize="24sp"
+        android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.496"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.158" />
+        app:layout_constraintVertical_bias="0.196" />
 
     <TextView
-        android:id="@+id/textView2"
+        android:id="@+id/tvWeetje"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:clickable="false"
-        android:text="Tip: Wist je dat deze onboarding door studenten is gemaakt?"
-        android:textAppearance="@style/TextAppearance.AppCompat.Large"
-        android:textColor="#2042FF"
-        android:textStyle="bold|italic"
+        android:gravity="center"
+        android:text="Meer weten over doorstuderen? Klik hier (https://www.ad-academie.nl/praktische-informatie/doorstuderen)"
+        android:textColor="@color/colorHeader2"
+        android:textSize="12sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintHorizontal_bias="0.333"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.92" />
+        app:layout_constraintVertical_bias="0.896" />
+
+
+
+    <!-- Relative layout voor de bollen bovenaan -->
+    <RelativeLayout
+        android:layout_width="417dp"
+        android:layout_height="736dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0">
+
+        <TextView
+            android:id="@+id/tvBolLogoRechts"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+
+            android:layout_marginEnd="-50dp"
+            android:layout_marginTop="-110dp"
+            android:background="@drawable/bol_logo_rechts"
+            android:alpha="0.75"
+            android:text="" />
+
+        <TextView
+            android:id="@+id/tvBolLogoLinks"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+
+            android:layout_marginStart="-140dp"
+            android:layout_marginTop="-140dp"
+            android:layout_marginEnd="96dp"
+            android:background="@drawable/bol_logo_links"
+            android:alpha="0.75"
+            android:text="" />
+
+        <!-- Textview aanmaken voor het studentnummer, niet zichtbaar voor gebruiker -->
+        <TextView
+            android:id="@+id/tvStudentnummer"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text=""
+            android:visibility="invisible"/>
+    </RelativeLayout>
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
